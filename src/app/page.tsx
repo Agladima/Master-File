@@ -1,32 +1,64 @@
+import React from "react";
 import Link from "next/link";
-
-import { FaCode } from "react-icons/fa";
-import { FaLaptopCode } from "react-icons/fa";
-import { FaJsSquare } from "react-icons/fa";
-import "./page.css";
+import { FaCode, FaLaptopCode, FaJsSquare } from "react-icons/fa";
 import Image from "next/image";
+import "./page.css";
+
+// Define the project data directly in the component
+const projects = [
+  {
+    id: 1,
+    title: "Jakisa",
+    description:
+      "A multifaceted digital platform offering a wide array of content and services, including news, technology updates, science articles, business insights, sports coverage, and entertainment. ",
+    image: "/Images/jakisa.jpg",
+    link: "https://jackisa.com",
+  },
+  {
+    id: 2,
+    title: "SabiRoad",
+    description:
+      "SabiRoad is an innovative platform that leverages artificial intelligence, geospatial data, and architectural expertise to facilitate the discovery and analysis of buildings with exceptional precision.",
+    image: "/Images/sabiroad.jpg",
+    link: "https://ssabiroad.vercel.app",
+  },
+  {
+    id: 3,
+    title: "Todo App",
+    description:
+      "This is a simple yet efficient task management application built with React. It allows users to add, edit, mark as complete, and delete tasks effortlessly.",
+    image: "/Images/todo.jpg",
+    link: "https://github.com/Agladima/todo-app-with-react",
+  },
+  {
+    id: 4,
+    title: "Viyo",
+    description:
+      "Viyo is a streamlined rental platform that makes finding and securing properties easy. Users can browse listings and connect directly with landlords through an integrated chat system.",
+    image: "/Images/viyo.jpg",
+    link: "https://viyo-three.vercel.app/",
+  },
+  {
+    id: 5,
+    title: "Weather App",
+    description:
+      "A weather app that provides real-time weather updates using a third-party API.",
+    image: "/Images/weda.jpg",
+    link: "https://github.com/Agladima/Weather-App",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="App bg-[#260101] min-h-screen text-[#d9b991] ">
-      <header className="flex justify-center items-center fixed  left-0 w-full z-50 bg-[#260101]">
+    <div className="App bg-[#260101] min-h-screen text-[#d9b991]">
+      <header className="flex justify-center items-center fixed left-0 w-full z-50 bg-[#260101]">
         <h1 className="name">
           <span>Agladima</span>
-        </h1>{" "}
+        </h1>
         <nav className="navigation">
-          <Link href="#experience">
-            {" "}
-            <a>Experience</a>
-          </Link>
-          <Link href="#project">
-            {" "}
-            <a>Projects</a>
-          </Link>
-          <Link href="#">
-            {" "}
-            <a>Contact</a>
-          </Link>
-
+          <Link href="#experience">Experience</Link>
+          <Link href="#project">Projects</Link>
+          <Link href="#">Contact</Link>
           <a
             href="https://flowcv.com/resume/qec81kgjr4"
             className="button"
@@ -36,7 +68,7 @@ export default function Home() {
             View Resume
           </a>
         </nav>
-      </header>{" "}
+      </header>
       <section className="hero">
         <div className="ping-container">
           <span className="ping-text">Available For Projects</span>
@@ -53,7 +85,7 @@ export default function Home() {
             <div className="hero-services">
               <div className="service">
                 <FaCode className="icon" />
-                <h3> Full-Stack Development</h3>{" "}
+                <h3> Full-Stack Development</h3>
                 <p>
                   Crafting responsive, accessible, and performant web
                   applications with the latest technologies.
@@ -104,7 +136,6 @@ export default function Home() {
                 Kept abreast of tech trends for innovative solutions.
               </div>
             </div>
-
             <div className="timeline-item">
               <div className="date">2024 - 2025</div>
               <div className="job-title">Frontend Developer</div>
@@ -129,269 +160,178 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="tech-stack">
         <div className="tech-stack-header">
           <p>Technologies</p>
           <h2>Tech Stack</h2>
         </div>
-        <div>
-          <div className="tech-category">
-            <h3>Languages</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <Image
-                  src="/Images/javascript.gif"
-                  width={48}
-                  height={45}
-                  alt="Javascript"
-                />
-                <p>JavaScript</p>
-              </div>
-              <div className="tech-item">
-                <Image
-                  src="/Images/typescript.png"
-                  width={48}
-                  height={45}
-                  alt="Typescript"
-                />
-                <p>TypeScript</p>
-              </div>
-              <div className="tech-item">
-                <Image
-                  src="/Images/python.gif"
-                  width={48}
-                  height={45}
-                  alt="Python"
-                />
-                <p>Python</p>
-              </div>
-            </div>
+        <div className="tech-grid">
+          <div className="tech-item">
+            <Image
+              src="/Images/javascript.gif"
+              width={48}
+              height={45}
+              alt="JavaScript"
+            />
+            <h3>JavaScript</h3>
+            <p>Language</p>
           </div>
-          <div className="tech-category">
-            <h3>Frontend Frameworks</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <Image
-                  src="/Images/react.gif"
-                  width={48}
-                  height={45}
-                  alt="React.js"
-                />
-                <p>React.js</p>
-              </div>
-              <div className="tech-item">
-                <Image
-                  src="/Images/next.png"
-                  width={48}
-                  height={45}
-                  alt="Next.js"
-                />
-                <p>Next.js</p>
-              </div>
-            </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/typescript.png"
+              width={48}
+              height={45}
+              alt="TypeScript"
+            />
+            <h3>TypeScript</h3>
           </div>
-          <div className="tech-category">
-            <h3>Backend Frameworks</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <Image
-                  src="/Images/node.png"
-                  width={48}
-                  height={45}
-                  alt="Node.js"
-                />
-                <p>Node.js</p>
-              </div>
-              <div className="tech-item">
-                <Image
-                  src="/Images/django.png"
-                  width={48}
-                  height={45}
-                  alt="Django"
-                />
-                <p>Django(Python)</p>
-              </div>
-            </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/python.gif"
+              width={48}
+              height={45}
+              alt="Python"
+            />
+            <h3>Python</h3>
           </div>
-          <div className="tech-category">
-            <h3>Web Development</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <Image
-                  src="/Images/html.png"
-                  width={48}
-                  height={45}
-                  alt="HTML"
-                />
-                <p>HTML</p>
-              </div>
-              <div className="tech-item">
-                <Image src="/Images/css.png" width={48} height={45} alt="CSS" />
-                <p>CSS</p>
-              </div>
-              <div className="tech-item">
-                <Image
-                  src="/Images/tailwind.png"
-                  width={48}
-                  height={45}
-                  alt="Tailwind"
-                />
-                <p>Tailwind</p>
-              </div>
-            </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/react.gif"
+              width={48}
+              height={45}
+              alt="React.js"
+            />
+            <h3>React.js</h3>
           </div>
-          <div className="tech-category">
-            <h3>Version Control</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <Image src="/Images/git.png" width={48} height={45} alt="Git" />
-                <p>Git</p>
-              </div>
-              <div className="tech-item">
-                <Image
-                  src="/Images/github.png"
-                  width={48}
-                  height={45}
-                  alt="Github"
-                />
-                <p>GitHub</p>
-              </div>
-              <div className="tech-item">
-                <Image
-                  src="/Images/gitlab.png"
-                  width={48}
-                  height={45}
-                  alt="Gitlab"
-                />
-                <p>Gitlab</p>
-              </div>
-            </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/next.png"
+              width={48}
+              height={45}
+              alt="Next.js"
+            />
+            <h3>Next.js</h3>
           </div>
-          <div className="tech-category">
-            <h3>Development Tools</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <Image
-                  src="/Images/vs.png"
-                  width={48}
-                  height={45}
-                  alt="VS Code"
-                />
-                <p>Visual Studio Code</p>
-              </div>
-              <div className="tech-item">
-                <Image
-                  src="/Images/sublime.png"
-                  width={48}
-                  height={45}
-                  alt="Sublime Text"
-                />
-                <p>Sublime Text</p>
-              </div>
-              <div className="tech-item">
-                <Image
-                  src="/Images/pycharm.png"
-                  width={48}
-                  height={45}
-                  alt="PyCharm"
-                />
-                <p>PyCharm</p>
-              </div>
-            </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/node.png"
+              width={48}
+              height={45}
+              alt="Node.js"
+            />
+            <h3>Node.js</h3>
+          </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/django.png"
+              width={48}
+              height={45}
+              alt="Django"
+            />
+            <h3>Django</h3>
+          </div>
+          <div className="tech-item">
+            <Image src="/Images/html.png" width={48} height={45} alt="HTML" />
+            <h3>HTML</h3>
+          </div>
+          <div className="tech-item">
+            <Image src="/Images/css.png" width={48} height={45} alt="CSS" />
+            <h3>CSS</h3>
+          </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/tailwind.png"
+              width={48}
+              height={45}
+              alt="Tailwind"
+            />
+            <h3>Tailwind</h3>
+          </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/github.png"
+              width={48}
+              height={45}
+              alt="GitHub"
+            />
+            <h3>GitHub</h3>
+          </div>
+          <div className="tech-item">
+            <Image src="/Images/git.png" width={48} height={45} alt="Git" />
+            <h3>Git</h3>
+          </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/gitlab.png"
+              width={48}
+              height={45}
+              alt="GitLab"
+            />
+            <h3>GitLab</h3>
+          </div>
+          <div className="tech-item">
+            <Image src="/Images/vs.png" width={48} height={45} alt="VS Code" />
+            <h3>VS Code</h3>
+          </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/sublime.png"
+              width={48}
+              height={45}
+              alt="Sublime Text"
+            />
+            <h3>Sublime Text</h3>
+          </div>
+          <div className="tech-item">
+            <Image
+              src="/Images/pycharm.png"
+              width={48}
+              height={45}
+              alt="PyCharm"
+            />
+            <h3>PyCharm</h3>
           </div>
         </div>
       </section>
-      <section id="project" className="projects">
-        <div className="project-header">
-          <h2>Featured Projects</h2>
-          <p>
-            Explore my portfolio of software development projects. As a software
-            engineer, I specialize in building scalable and efficient solutions
-            that solve real-world problems. My work spans full-stack
-            development, system design, and data-driven applications, showcasing
-            my ability to design, develop, and deploy innovative technologies.
-            From crafting robust backend systems to creating seamless user
-            experiences, each project reflects my commitment to excellence and
-            my passion for delivering high-quality software solutions.
-          </p>
-        </div>
-        <div className="project-items">
-          <div className="project-item">
-            <div className="project-image">
-              <Image
-                src="/Images/todo.jpg"
-                width={300}
-                height={200}
-                alt="Todo App"
-                className="de-image"
-              />
-            </div>
-            <a
-              href="https://github.com/Agloo7/todo-app-with-react"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ToDo List App
-            </a>
-            <p>
-              A to-do list app that allows users to efficiently manage tasks by
-              adding, editing, and deleting to-do items. This project highlights
-              my ability to create functional, user-friendly applications with
-              essential features like task prioritization and completion
-              tracking.
-            </p>
-          </div>
-          <div className="project-item">
-            <div className="project-image">
-              <Image
-                src="/Images/viyo.jpg"
-                width={300}
-                height={200}
-                alt="Viyo"
-                className="de-image"
-              />
-            </div>
-            <a
-              href="https://github.com/Agloo7/Viyo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Viyo
-            </a>
-            <p>
-              The rental property site is a dynamic platform that streamlines
-              the process of searching for and renting properties. It features
-              an intuitive interface with advanced search filters, property
-              listings, and detailed property pages, ensuring an easy and
-              seamless user experience.
-            </p>
-          </div>
 
-          <div className="project-item">
-            <div className="project-image">
+      {/* Portfolio Section */}
+      <section id="project" className="portfolio">
+        <h2>My Projects</h2>
+        <div className="grid">
+          {projects.map((project) => (
+            <div key={project.id} className="card">
               <Image
-                src="/Images/weather.jpg"
+                src={project.image}
+                alt={project.title}
                 width={300}
                 height={200}
-                alt="Weather"
-                className="de-image"
+                className="image"
               />
+              <div className="overlay">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="links">
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo
+                  </Link>
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </Link>
+                  )}
+                </div>
+              </div>
             </div>
-            <a
-              href="https://github.com/Agloo7/Weather-App"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Weather App
-            </a>
-            <p>
-              {" "}
-              The weather app is another project where I utilized JavaScript and
-              external APIs to provide real-time weather information. Users can
-              view current conditions, forecasts, and weather tips based on
-              their location, all within a clean and responsive design.
-            </p>
-          </div>
+          ))}
         </div>
       </section>
     </div>
